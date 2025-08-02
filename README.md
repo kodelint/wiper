@@ -25,14 +25,14 @@ A powerful command-line utility for macOS to completely uninstall applications a
 
 ### Prerequisites
 
-You need to have Go version 1.24.5 or higher installed to build and run Wiper.
+You need to have Go version `1.24.5` or higher installed to build and run Wiper.
 
 ### From Source
 
 You can install Wiper directly using the Go command-line tool.
 
 ```sh
-go install [github.com/kodelint/wiper@latest](https://github.com/kodelint/wiper@latest)
+go install github.com/kodelint/wiper@latest
 ```
 This command will download the source code, build the binary, and place it in your `$GOPATH/bin` directory. Ensure this directory is in your system's `PATH`.
 
