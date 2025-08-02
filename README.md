@@ -11,7 +11,7 @@ A powerful command-line utility for macOS to completely uninstall applications a
 [![Last commit](https://img.shields.io/github/last-commit/kodelint/wiper.svg)](https://github.com/kodelint/wiper/commits/main)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/kodelint/wiper/pulls)
 
-<p align="center">
+<p>
   <img src="https://raw.githubusercontent.com/kodelint/blog-images/main/common/01-Wiper.png" width="600" height="600" alt="Wiper Command-Line Output" />
 </p>
 
