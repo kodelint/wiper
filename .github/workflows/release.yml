@@ -1,4 +1,3 @@
-# .github/workflows/release.yml
 name: Release Wiper
 
 on:
@@ -9,7 +8,7 @@ on:
 jobs:
   build:
     name: Build Release
-    runs-on: macos-latest # macOS is required to build for macOS
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
@@ -18,7 +17,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: "1.22" # Or your desired Go version
+          go-version: "1.22"
 
       - name: Get version from tag
         id: get_version
@@ -27,8 +26,7 @@ jobs:
       - name: Build Wiper
         run: |
           go mod tidy
-          CGO_ENABLED=0 go build -ldflags "-s -w -X 'github.com/kodelint
-          /wiper/cmd.Version=${{ steps.get_version.outputs.VERSION }}'" -o wiper main.go
+          go build -ldflags="-s -w -X 'github.com/kodelint/wiper/cmd.version=${{ steps.get_version.outputs.VERSION }}'" -o wiper main.go
 
       - name: Create archive
         run: |
@@ -40,3 +38,4 @@ jobs:
         with:
           files: wiper-macos-${{ steps.get_version.outputs.VERSION }}.tar.gz
           prerelease: ${{ contains(steps.get_version.outputs.VERSION, 'alpha') || contains(steps.get_version.outputs.VERSION, 'beta') || contains(steps.get_version.outputs.VERSION, 'rc') }}
+          token: ${{ secrets.TOKEN }}
