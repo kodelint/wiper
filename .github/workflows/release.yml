@@ -30,12 +30,12 @@ jobs:
 
       - name: Create archive
         run: |
-          tar -czf wiper-macos-${{ steps.get_version.outputs.VERSION }}.tar.gz wiper
+          tar -czf wiper-macos-x86_64-${{ steps.get_version.outputs.VERSION }}.tar.gz wiper
 
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: wiper-macos-${{ steps.get_version.outputs.VERSION }}.tar.gz
+          files: wiper-macos-x86_64-${{ steps.get_version.outputs.VERSION }}.tar.gz
           prerelease: ${{ contains(steps.get_version.outputs.VERSION, 'alpha') || contains(steps.get_version.outputs.VERSION, 'beta') || contains(steps.get_version.outputs.VERSION, 'rc') }}
           token: ${{ secrets.TOKEN }}
