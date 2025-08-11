@@ -3,12 +3,12 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/kodelint/wiper/pkg/utils"
 	"net/http"
 	"strings"
 	"time"
 
 	"github.com/kodelint/wiper/pkg/logger"
+	"github.com/kodelint/wiper/pkg/utils"
 	"github.com/spf13/cobra"
 )
 
