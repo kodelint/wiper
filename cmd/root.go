@@ -2,10 +2,11 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/kodelint/wiper/pkg/logger"
-	"github.com/spf13/cobra"
 	"os"
 	"strings"
+
+	"github.com/kodelint/wiper/pkg/logger"
+	"github.com/spf13/cobra"
 )
 
 // ====================================================================================================
