@@ -3,11 +3,12 @@ package cleaner
 import (
 	"bufio"
 	"fmt"
+	"os"
+	"strings"
+
 	"github.com/kodelint/wiper/pkg/logger"
 	"github.com/kodelint/wiper/pkg/reclaimer"
 	"github.com/kodelint/wiper/pkg/utils"
-	"os"
-	"strings"
 )
 
 // ====================================================================================================
