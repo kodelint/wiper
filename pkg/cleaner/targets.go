@@ -1,9 +1,10 @@
 package cleaner
 
 import (
+	"path/filepath" // Imported for filepath.Join and other path manipulations
+	"time"          // Imported for time.Duration
+
 	"github.com/kodelint/wiper/pkg/utils" // Imported for utils.ExpandPath
-	"path/filepath"                       // Imported for filepath.Join and other path manipulations
-	"time"                                // Imported for time.Duration
 )
 
 // ====================================================================================================

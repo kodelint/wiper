@@ -1,11 +1,12 @@
 package reclaimer
 
 import (
+	"os"
+	"sort"
+
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/kodelint/wiper/pkg/logger"
 	"github.com/kodelint/wiper/pkg/utils"
-	"os"
-	"sort"
 )
 
 // ====================================================================================================
@@ -71,20 +72,6 @@ func (st *SummaryTable) PrintTable(dryRun bool, title string) {
 		logger.Log.Debugf("No files or directories were processed for cleanup.")
 		return
 	}
-
-	//	// Older Logic
-	//Step 1: Group entries by category to aggregate totals.
-	//groupedTotals := make(map[string]int64)
-	//for _, entry := range st.Entries {
-	//	groupedTotals[entry.Category] += entry.SizeReclaimed
-	//}
-
-	// Older Logic
-	//Step 2: Sort categories for a consistent and predictable table order.
-	//categories := make([]string, 0, len(groupedTotals))
-	//for category := range groupedTotals {
-	//	categories = append(categories, category)
-	//}
 
 	// Step 1: Group entries by category to aggregate totals. {New}
 	groupedTotals := make(map[string]int64)

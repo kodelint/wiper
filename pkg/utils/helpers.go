@@ -123,10 +123,10 @@ func RemovePath(path string, dryRun bool) (int64, error) {
 
 	logger.Log.Debugf(Red("Removing granular item: %s (Size: %s)"), path, FormatBytes(size))
 	//Enable it if we really need to remove it
-	//logger.Log.Infof("Removing granular item: %s (Size: %s)", path, FormatBytes(size))
-	//if err := os.RemoveAll(path); err != nil {
-	//	return 0, fmt.Errorf("failed to remove %s: %w", path, err)
-	//}
+	logger.Log.Infof("Removing granular item: %s (Size: %s)", path, FormatBytes(size))
+	if err := os.RemoveAll(path); err != nil {
+		return 0, fmt.Errorf("failed to remove %s: %w", path, err)
+	}
 	return size, nil
 }
 
